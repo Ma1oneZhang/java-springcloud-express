@@ -27,6 +27,7 @@
       <module name="client" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
+      <module name="java-springcloud-express" options="" />
       <module name="menu" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="user" options="-parameters" />
