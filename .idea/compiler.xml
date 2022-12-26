@@ -7,18 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common" />
         <module name="configServer" />
         <module name="client" />
         <module name="menu" />
         <module name="eurekaServer" />
         <module name="user" />
         <module name="account" />
+        <module name="gateway" />
         <module name="order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cofigServer" target="1.8" />
-      <module name="express" target="1.5" />
+      <module name="java-springcloud-express" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -27,7 +28,6 @@
       <module name="client" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
-      <module name="java-springcloud-express" options="" />
       <module name="menu" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="user" options="-parameters" />
