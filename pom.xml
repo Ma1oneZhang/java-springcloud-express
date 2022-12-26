@@ -14,6 +14,7 @@
         <module>menu</module>
         <module>order</module>
         <module>user</module>
+        <module>common</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
 
