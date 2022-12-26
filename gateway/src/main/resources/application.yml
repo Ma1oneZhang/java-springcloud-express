@@ -1,0 +1,24 @@
+server:
+  port: 8080  #端口号
+spring:
+  application:
+    name: microServiceCloudGateway
+  cloud:
+    gateway: #网关路由配置
+      routes:
+        #将 micro-service-cloud-provider-dept-8001 提供的服务隐藏起来，不暴露给客户端，只给客户端暴露 API 网关的地址 9527
+        - id: provider_dept_list_routh   #路由 id,没有固定规则，但唯一，建议与服务名对应
+          uri: http://localhost:7000          #匹配后提供服务的路由地址
+          predicates:
+            #以下是断言条件，必选全部符合条件
+            - Path=/eureka             #断言，路径匹配 注意：Path 中 P 为大写
+            - Method=GET, POST #只能时 GET 请求时，才能访问
+eureka:
+  instance:
+    instance-id: micro-service-cloud-gateway-9527
+    hostname: micro-service-cloud-gateway
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7000/eureka/

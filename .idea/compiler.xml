@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -12,12 +13,14 @@
         <module name="eurekaServer" />
         <module name="user" />
         <module name="account" />
+        <module name="gateway" />
         <module name="order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cofigServer" target="1.8" />
       <module name="express" target="1.5" />
+      <module name="java-springcloud-express" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +29,7 @@
       <module name="client" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="menu" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="user" options="-parameters" />
