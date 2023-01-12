@@ -8,18 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
-        <module name="configServer" />
-        <module name="client" />
-        <module name="menu" />
         <module name="eurekaServer" />
-        <module name="user" />
-        <module name="account" />
-        <module name="gateway" />
-        <module name="order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java-springcloud-express" target="1.8" />
+      <module name="account" target="1.8" />
+      <module name="client" target="1.8" />
+      <module name="configServer" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="menu" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="user" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -28,6 +27,7 @@
       <module name="client" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="menu" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="user" options="-parameters" />
