@@ -28,6 +28,7 @@ public enum ResultCode {
     OPERATION_TO_FREQUENT(2015, "操作过于频繁"),
     EMAIL_ALREADY_EXIST(2016, "邮箱已经被注册"),
     USER_ACCOUNT_ALREADY_LOGIN(2017, "账户已经登录"),
+    PASSWORD_TOO_WEAK(2018, "密码太弱请重新输入"),
     /* 业务错误 */
     NO_PERMISSION(3001, "没有权限"),
     /* 系统错误 */

@@ -3,7 +3,7 @@ package com.express.utils;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.express.enums.ResultCode;
-import com.express.exceptions.SystemException;
+import com.express.exceptions.exception.SystemException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

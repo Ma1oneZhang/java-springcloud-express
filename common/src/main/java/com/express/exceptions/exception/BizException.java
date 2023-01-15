@@ -1,8 +1,8 @@
-package com.express.exceptions;
+package com.express.exceptions.exception;
+
 import com.express.enums.ResultCode;
 
-public class SystemException extends RuntimeException{
-
+public class BizException extends RuntimeException{
     private int code;
 
     private String msg;
@@ -15,10 +15,9 @@ public class SystemException extends RuntimeException{
         return msg;
     }
 
-    public SystemException(ResultCode httpCodeEnum) {
+    public BizException(ResultCode httpCodeEnum) {
         super(httpCodeEnum.getMsg());
         this.code = httpCodeEnum.getCode();
         this.msg = httpCodeEnum.getMsg();
     }
-
 }

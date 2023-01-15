@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31d7b710-7f41-4cdf-ae2f-1cf1e555455f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/menu/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/menu/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orders/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/exception/SystemException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/exception/UserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/utils/SecuritySHA1Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dd86166-9458-4848-adef-5d8a31796da3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dd86166-9458-4848-adef-5d8a31796da3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/express/enums/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/enums/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/SystemException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/exception/BizException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/express/utils/PageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/utils/PageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +64,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-1.8",
     "last_opened_file_path": "/home/zzy/Desktop/java-springcloud-express",
@@ -117,19 +125,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="common" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="common" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="user" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.express.UserApplication" />
@@ -177,9 +172,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UserApplication" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Docker.Docker Image (1)" />
       </list>
     </recent_temporary>
@@ -208,7 +200,8 @@
       <workItem from="1673756460890" duration="2958000" />
       <workItem from="1673760364635" duration="1500000" />
       <workItem from="1673761902301" duration="1071000" />
-      <workItem from="1673762986576" duration="6266000" />
+      <workItem from="1673762986576" duration="7051000" />
+      <workItem from="1673777965231" duration="4170000" />
     </task>
     <servers />
   </component>

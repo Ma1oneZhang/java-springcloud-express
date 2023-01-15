@@ -1286,7 +1286,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>2</Position>
     </column>
     <column id="340" parent="301" name="password">
-      <DasType>varchar(20)|0s</DasType>
+      <DasType>varchar(300)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="341" parent="301" name="nickname">
@@ -1302,7 +1302,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>6</Position>
     </column>
     <column id="344" parent="301" name="registerdate">
-      <DasType>date|0s</DasType>
+      <DasType>timestamp|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="345" parent="301" name="address">
