@@ -36,7 +36,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     UserMapper userMapper;
 
     @Override
-    public User Register(UserRegisterVO userRegisterVO){
+    public User register(UserRegisterVO userRegisterVO){
         Map<String, Object> query = new HashMap<>();
         query.put("username", userRegisterVO.getUsername());
         if(userMapper.selectByMap(query).size() > 0){
@@ -49,14 +49,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         userMapper.insert(newUser);
         return newUser;
     }
+    static final Pattern PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$");
     public static boolean checkPas(String pas) {
-        Pattern pattern = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$");
-        Matcher matcher = pattern.matcher(pas);
+        Matcher matcher = PATTERN.matcher(pas);
         return matcher.matches();
     }
     @SneakyThrows
     @Override
-    public User Login(UserLoginVo userLoginVo){
+    public User login(UserLoginVo userLoginVo){
         Map<String, Object> query = new HashMap<>();
         query.put("username", userLoginVo.getUsername());
         query.put("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));

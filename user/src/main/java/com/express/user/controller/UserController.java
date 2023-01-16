@@ -32,15 +32,15 @@ public class UserController {
 
     @PostMapping("/register")
     @ApiOperation(value = "注册")
-    public ResponseResult Register(@RequestBody
+    public ResponseResult register(@RequestBody
                                        UserRegisterVO registerVO){
-        return ResponseResult.okResult(userService.Register(registerVO));
+        return ResponseResult.okResult(userService.register(registerVO));
     }
 
     @PostMapping("/login")
     @ApiOperation(value = "登录")
-    public ResponseResult Login(@RequestBody
+    public ResponseResult login(@RequestBody
                                     UserLoginVo userLoginVo) {
-        return ResponseResult.okResult(userService.Login(userLoginVo));
+        return ResponseResult.okResult(userService.login(userLoginVo));
     }
 }

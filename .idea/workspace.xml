@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31d7b710-7f41-4cdf-ae2f-1cf1e555455f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/exception/SystemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/exception/UserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/utils/SecuritySHA1Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dd86166-9458-4848-adef-5d8a31796da3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dd86166-9458-4848-adef-5d8a31796da3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/express/enums/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/enums/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/SystemException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/exceptions/exception/BizException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/express/utils/PageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/utils/PageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/beans/Swagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/beans/Swagger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserLoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserLoginVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserRegisterVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserRegisterVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
@@ -56,36 +48,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "/home/zzy/Desktop/java-springcloud-express",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files",
-    "spring.configuration.checksum": "c4ad5b117f434250a25a8d7204a5764f",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/zzy/Desktop/java-springcloud-express&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c4ad5b117f434250a25a8d7204a5764f&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/menu/src/main/java" />
@@ -201,7 +193,10 @@
       <workItem from="1673760364635" duration="1500000" />
       <workItem from="1673761902301" duration="1071000" />
       <workItem from="1673762986576" duration="7051000" />
-      <workItem from="1673777965231" duration="4170000" />
+      <workItem from="1673777965231" duration="4475000" />
+      <workItem from="1673784018993" duration="551000" />
+      <workItem from="1673840734504" duration="625000" />
+      <workItem from="1673842631119" duration="449000" />
     </task>
     <servers />
   </component>

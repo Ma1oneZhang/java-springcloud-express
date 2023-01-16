@@ -16,6 +16,6 @@ import java.io.UnsupportedEncodingException;
  * @since 2023-01-15 02:04:52
  */
 public interface UserService extends IService<User> {
-    User Register(UserRegisterVO userRegisterVO) ;
-    User Login(UserLoginVo userLoginVo);
+    User register(UserRegisterVO userRegisterVO) ;
+    User login(UserLoginVo userLoginVo);
 }
