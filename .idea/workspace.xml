@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31d7b710-7f41-4cdf-ae2f-1cf1e555455f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/DTO/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +196,8 @@
       <workItem from="1674094436322" duration="68000" />
       <workItem from="1674118999905" duration="555000" />
       <workItem from="1674119569057" duration="4668000" />
-      <workItem from="1674124409627" duration="1810000" />
+      <workItem from="1674124409627" duration="2156000" />
+      <workItem from="1674127145002" duration="1702000" />
     </task>
     <servers />
   </component>

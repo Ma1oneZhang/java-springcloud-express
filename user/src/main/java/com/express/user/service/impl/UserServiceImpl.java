@@ -7,6 +7,7 @@ import com.express.enums.ResultCode;
 import com.express.exceptions.exception.UserException;
 import com.express.user.entity.User;
 import com.express.user.mapper.UserMapper;
+import com.express.user.pojo.DTO.UserDTO;
 import com.express.user.pojo.VO.UserLoginVo;
 import com.express.user.pojo.VO.UserRegisterVO;
 import com.express.user.service.UserService;
@@ -20,6 +21,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,8 +71,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if(result.size() == 0){
             throw new UserException(ResultCode.USER_ACCOUNT_NOT_EXIST);
         }else{
-            result.get(0).setPassword("");
-            return ResponseResult.okResult(result.get(0));
+            return ResponseResult.okResult(userEntityToOthers(UserDTO.class, result.get(0)));
         }
     }
 
@@ -79,23 +80,45 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         IPage<User> iPage = PageUtils.getPage(pageNum, pageSize, User.class);
         page(iPage, new QueryWrapper<User>());
         PageUtils pageUtils = new PageUtils<>(iPage);
-        System.out.println(iPage.getTotal());
         List<User> result =  pageUtils.getList();
-        result.forEach(i -> {
-            i.setPassword("");
-        });
-        pageUtils.setList(result);
+        pageUtils.setList(listUserEntityToOthers(UserDTO.class, result));
         return ResponseResult.okResult(pageUtils);
     }
+
+    /**
+     * @author zzy
+     * @describe Do as you think
+     * @since 2023-01-19 19:21
+     * */
     private User toUserEntity(Object object){
         User user = new User();
         BeanUtils.copyProperties(object, user);
         return user;
     }
+
+
+    /**
+     * @author zzy
+     * @describe Do as you think
+     * @since 2023-01-19 19:21
+     * */
     @SneakyThrows
     private <T> T userEntityToOthers(Class<T> c, User user){
         T object = c.newInstance();
         BeanUtils.copyProperties(user, object);
         return object;
+    }
+
+    /**
+     * @author zzy
+     * @describe Do as you think
+     * @since 2023-01-19 19:35
+     * */
+    private <T> List<T> listUserEntityToOthers(Class<T> c, List<User> users){
+        List<T> list = new ArrayList<>();
+        for (User user : users) {
+            list.add(userEntityToOthers(c, user));
+        }
+        return list;
     }
 }
