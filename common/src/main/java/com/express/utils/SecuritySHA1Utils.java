@@ -3,12 +3,14 @@ package com.express.utils;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 
+/**
+ * @author zzy
+ */
 public class SecuritySHA1Utils {
 
     /**
-     * @Comment SHA1实现
-     * @Author zzy
-     * @Date 2022年1月15日 下午6:32:36
+     * @comment SHA1实现
+     * @author zzy
      * @return 字符串的哈希值
      */
     public static String shaEncode(String inStr) {

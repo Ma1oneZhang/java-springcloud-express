@@ -8,10 +8,7 @@ import com.express.user.service.impl.UserServiceImpl;
 import com.express.utils.ResponseResult;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 
@@ -42,5 +39,11 @@ public class UserController {
     public ResponseResult login(@RequestBody
                                     UserLoginVo userLoginVo) {
         return ResponseResult.okResult(userService.login(userLoginVo));
+    }
+
+    @GetMapping("/userinfo")
+    @ApiOperation(value = "管理员获取用户信息")
+    public ResponseResult userInfo(Integer pageNum, Integer pageSize){
+        return ResponseResult.okResult(userService.listAllUser(pageNum, pageSize));
     }
 }

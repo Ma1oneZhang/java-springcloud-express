@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31d7b710-7f41-4cdf-ae2f-1cf1e555455f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/express/utils/RegExpressionCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dd86166-9458-4848-adef-5d8a31796da3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dd86166-9458-4848-adef-5d8a31796da3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/beans/Swagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/beans/Swagger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/express/utils/SecuritySHA1Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/utils/SecuritySHA1Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/menu/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/beans/Swagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/express/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserLoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserLoginVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserRegisterVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/VO/UserRegisterVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
@@ -197,11 +205,25 @@
       <workItem from="1673784018993" duration="551000" />
       <workItem from="1673840734504" duration="625000" />
       <workItem from="1673842631119" duration="449000" />
+      <workItem from="1674094436322" duration="68000" />
+      <workItem from="1674118999905" duration="555000" />
+      <workItem from="1674119569057" duration="4668000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

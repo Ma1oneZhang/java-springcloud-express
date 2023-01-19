@@ -1,5 +1,8 @@
 package com.express.user.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.express.enums.ResultCode;
 import com.express.exceptions.exception.UserException;
 import com.express.user.entity.User;
@@ -8,18 +11,19 @@ import com.express.user.pojo.VO.UserLoginVo;
 import com.express.user.pojo.VO.UserRegisterVO;
 import com.express.user.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.express.utils.PageUtils;
+import com.express.utils.ResponseResult;
 import com.express.utils.SecuritySHA1Utils;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import static com.express.utils.RegExpressionCheck.checkPas;
 
 /**
  * <p>
@@ -32,39 +36,52 @@ import java.util.regex.Pattern;
 @Service
 @Slf4j
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
-    @Autowired
-    UserMapper userMapper;
 
     @Override
-    public User register(UserRegisterVO userRegisterVO){
-        Map<String, Object> query = new HashMap<>();
-        query.put("username", userRegisterVO.getUsername());
-        if(userMapper.selectByMap(query).size() > 0){
+    public ResponseResult register(UserRegisterVO userRegisterVO){
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.select("username", userRegisterVO.getUsername());
+
+        if(count(wrapper) > 0){
             throw new UserException(ResultCode.USER_ACCOUNT_ALREADY_EXIST);
         }
         if(!checkPas(userRegisterVO.getPassword())){
             throw new UserException(ResultCode.PASSWORD_TOO_WEAK);
         }
         User newUser = new User(userRegisterVO);
-        userMapper.insert(newUser);
-        return newUser;
+        // extended in ServiceImpl<UserMapper, User>
+        // includes baseMapper inside
+        save(newUser);
+        newUser.setPassword("");
+        return ResponseResult.okResult(newUser);
     }
-    static final Pattern PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$");
-    public static boolean checkPas(String pas) {
-        Matcher matcher = PATTERN.matcher(pas);
-        return matcher.matches();
-    }
+
     @SneakyThrows
     @Override
-    public User login(UserLoginVo userLoginVo){
-        Map<String, Object> query = new HashMap<>();
-        query.put("username", userLoginVo.getUsername());
-        query.put("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));
-        List<User> result = userMapper.selectByMap(query);
+    public ResponseResult login(UserLoginVo userLoginVo){
+        QueryWrapper<User> query = new QueryWrapper<>();
+        query.select("username", userLoginVo.getUsername())
+                .select("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));
+        List<User> result = list(query);
         if(result.size() == 0){
             throw new UserException(ResultCode.USER_ACCOUNT_NOT_EXIST);
         }else{
-            return result.get(0);
+            result.get(0).setPassword("");
+            return ResponseResult.okResult(result.get(0));
         }
+    }
+
+    @Override
+    public ResponseResult listAllUser(Integer pageNum, Integer pageSize) {
+        IPage<User> iPage = PageUtils.getPage(pageNum, pageSize, User.class);
+        page(iPage, new QueryWrapper<User>());
+        PageUtils pageUtils = new PageUtils<>(iPage);
+        System.out.println(iPage.getTotal());
+        List<User> result =  pageUtils.getList();
+        result.forEach(i -> {
+            i.setPassword("");
+        });
+        pageUtils.setList(result);
+        return ResponseResult.okResult(pageUtils);
     }
 }

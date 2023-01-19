@@ -5,13 +5,11 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 import com.express.user.pojo.VO.UserRegisterVO;
 import com.express.utils.SecuritySHA1Utils;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
 

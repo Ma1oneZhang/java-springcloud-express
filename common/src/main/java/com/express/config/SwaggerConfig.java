@@ -1,4 +1,4 @@
-package com.express.user.beans;
+package com.express.config;
 
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.oas.annotations.EnableOpenApi;
@@ -9,5 +9,5 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
  */
 @Configuration
 @EnableOpenApi
-public class Swagger {
+public class SwaggerConfig {
 }
