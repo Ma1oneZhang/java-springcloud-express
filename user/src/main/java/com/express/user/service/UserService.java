@@ -42,6 +42,7 @@ public interface UserService extends IService<User> {
      * @param pageNum 前端所需要的页数
      * @param pageSize 每页的大小
      * @return 所有用户信息
+     * @warning 未加上管理员权限
      * */
     ResponseResult listAllUser(Integer pageNum, Integer pageSize);
 }

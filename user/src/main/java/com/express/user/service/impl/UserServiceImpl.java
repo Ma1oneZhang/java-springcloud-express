@@ -16,6 +16,7 @@ import com.express.utils.ResponseResult;
 import com.express.utils.SecuritySHA1Utils;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,16 +40,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public ResponseResult register(UserRegisterVO userRegisterVO){
+        if(userRegisterVO.getGender().length() > 1){
+            throw new UserException(ResultCode.USER_ACCOUNT_ALREADY_EXIST);
+        }
         QueryWrapper<User> wrapper = new QueryWrapper<>();
-        wrapper.select("username", userRegisterVO.getUsername());
-
+        wrapper.eq("username", userRegisterVO.getUsername());
         if(count(wrapper) > 0){
             throw new UserException(ResultCode.USER_ACCOUNT_ALREADY_EXIST);
         }
         if(!checkPas(userRegisterVO.getPassword())){
             throw new UserException(ResultCode.PASSWORD_TOO_WEAK);
         }
-        User newUser = new User(userRegisterVO);
+        User newUser = toUserEntity(userRegisterVO);
         // extended in ServiceImpl<UserMapper, User>
         // includes baseMapper inside
         save(newUser);
@@ -60,8 +63,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public ResponseResult login(UserLoginVo userLoginVo){
         QueryWrapper<User> query = new QueryWrapper<>();
-        query.select("username", userLoginVo.getUsername())
-                .select("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));
+        query.eq("username", userLoginVo.getUsername())
+                .eq("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));
         List<User> result = list(query);
         if(result.size() == 0){
             throw new UserException(ResultCode.USER_ACCOUNT_NOT_EXIST);
@@ -83,5 +86,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         });
         pageUtils.setList(result);
         return ResponseResult.okResult(pageUtils);
+    }
+    private User toUserEntity(Object object){
+        User user = new User();
+        BeanUtils.copyProperties(object, user);
+        return user;
+    }
+    @SneakyThrows
+    private <T> T userEntityToOthers(Class<T> c, User user){
+        T object = c.newInstance();
+        BeanUtils.copyProperties(user, object);
+        return object;
     }
 }
