@@ -14,5 +14,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/store/store")
 public class StoreController {
-
 }

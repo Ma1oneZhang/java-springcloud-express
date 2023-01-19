@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31d7b710-7f41-4cdf-ae2f-1cf1e555455f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/pojo/DTO/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/main/java/com/express/order/POJO/OrderVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/src/main/java/com/express/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/menu/src/main/java/com/express/MenuApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/src/main/java/com/express/OrderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/orders/src/main/java/com/express/OrderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/src/main/java/com/express/order/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orders/src/main/java/com/express/order/controller/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/src/main/java/com/express/order/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/orders/src/main/java/com/express/order/entity/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/src/main/java/com/express/order/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orders/src/main/java/com/express/order/service/OrdersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/src/main/java/com/express/order/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/orders/src/main/java/com/express/order/service/impl/OrdersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/express/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/express/StoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/express/store/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/express/store/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/express/user/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +95,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.express.Main" />
-      <module name="orders" />
+      <module name="user" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.express.*" />
@@ -102,7 +110,7 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.express.Main" />
-      <module name="user" />
+      <module name="orders" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.express.*" />
@@ -165,6 +173,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
   <component name="SpringGeneralSettings">
     <option name="allowAutoConfigurationMode" value="true" />
   </component>
@@ -197,7 +208,7 @@
       <workItem from="1674118999905" duration="555000" />
       <workItem from="1674119569057" duration="4668000" />
       <workItem from="1674124409627" duration="2156000" />
-      <workItem from="1674127145002" duration="1702000" />
+      <workItem from="1674127145002" duration="5325000" />
     </task>
     <servers />
   </component>

@@ -49,6 +49,4 @@ public class Orders implements Serializable {
 
     @TableField("cost")
     private Double cost;
-
-
 }

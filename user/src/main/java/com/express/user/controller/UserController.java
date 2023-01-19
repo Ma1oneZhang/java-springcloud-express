@@ -1,6 +1,5 @@
 package com.express.user.controller;
 
-import com.express.user.entity.User;
 import com.express.user.pojo.VO.UserLoginVo;
 import com.express.user.pojo.VO.UserRegisterVO;
 import com.express.user.service.UserService;
@@ -9,8 +8,6 @@ import com.express.utils.ResponseResult;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.UnsupportedEncodingException;
 
 /**
  * <p>
@@ -22,7 +19,7 @@ import java.io.UnsupportedEncodingException;
  */
 @RestController
 @RequestMapping("/api/user")
-@Api(value="用户controller",tags={"用户操作接口"})
+@Api(value="用户controller", tags={"用户操作接口"})
 public class UserController {
     @Autowired
     private UserService userService = new UserServiceImpl();
