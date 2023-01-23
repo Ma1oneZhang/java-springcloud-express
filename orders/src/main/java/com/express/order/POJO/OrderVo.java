@@ -5,10 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author zzy
+ * @author gqc
  */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class OrderVo {
+    private String orderTime;
+    private int user_id;
+    private int store_id;
+    private int menu_id;
+    private String state;
+    private double cost;
 }
