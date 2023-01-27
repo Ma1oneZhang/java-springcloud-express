@@ -1,22 +1,17 @@
 package com.express.store.controller;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.express.store.entity.Store;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.express.store.pojo.StoreVo;
 import com.express.store.service.StoreService;
 import com.express.store.service.impl.StoreServiceImpl;
 import com.express.utils.ResponseResult;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Collection;
-import java.util.Map;
-import java.util.function.Function;
 
 /**
  * <p>
@@ -32,21 +27,29 @@ public class StoreController {
     @Autowired
     private StoreService storeService  = new StoreServiceImpl() {
         @PostMapping
-        @ApiOperation(value = "创建商家")
-        public ResponseResult creatStores(StoreVo storeVo) {
-            return storeService.creatStores(storeVo);
+        @ApiOperation(value = "创建商店")
+        public ResponseResult<StoreVo> createStores(StoreVo storeVo) {
+            return storeService.createStores(storeVo, null);
         }
 
         @GetMapping
-        @ApiOperation(value = "通过id查询商家")
-        public ResponseResult queryStoresById(Integer userId, Integer storeId, Integer pageNum, Integer pageSize) {
-            return storeService.queryStoresById(null, storeId, pageNum, pageSize);
+        @ApiOperation(value = "通过商店id查询商店")
+        public ResponseResult<StoreVo> queryStoresByStoreId(Integer storeId) {
+            return storeService.queryStoresByStoreId(storeId);
+        }
+
+        // TODO:
+        // using spring security to get user id
+        @GetMapping
+        @ApiOperation(value = "通过用户id查询商店")
+        public ResponseResult<IPage<StoreVo>> queryStoresByUserId(Integer pageNum, Integer pageSize) {
+            return storeService.queryStoresByUserId(null, pageNum, pageSize);
         }
 
         @GetMapping
-        @ApiOperation(value = "通过用户id查询商家")
-        public ResponseResult queryStoresByUserId(Integer userId, Integer pageNum, Integer pageSize) {
-            return storeService.queryStoresByUserId(userId, pageNum, pageSize);
+        @ApiOperation(value = "通过名字搜索商店")
+        public ResponseResult<IPage<StoreVo>> queryStoresByStoreName(String name, Integer pageNum, Integer pageSize){
+            return storeService.queryStoresByName(name, pageNum, pageSize);
         }
     };
 }

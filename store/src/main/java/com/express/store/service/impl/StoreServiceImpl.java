@@ -20,17 +20,22 @@ import org.springframework.stereotype.Service;
 public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements StoreService {
 
     @Override
-    public ResponseResult creatStores(StoreVo storeVo) {
+    public ResponseResult createStores(StoreVo storeVo, Integer ownerId) {
         return null;
     }
 
     @Override
-    public ResponseResult queryStoresById(Integer userId, Integer storeId, Integer pageNum, Integer pageSize) {
+    public ResponseResult queryStoresByStoreId(Integer storeId) {
         return null;
     }
 
     @Override
     public ResponseResult queryStoresByUserId(Integer userId, Integer pageNum, Integer pageSize) {
+        return null;
+    }
+
+    @Override
+    public ResponseResult queryStoresByName(String name, Integer pageNum, Integer pageSize) {
         return null;
     }
 }
