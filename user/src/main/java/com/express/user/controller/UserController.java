@@ -1,5 +1,7 @@
 package com.express.user.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.express.user.pojo.DTO.UserDTO;
 import com.express.user.pojo.VO.UserLoginVo;
 import com.express.user.pojo.VO.UserRegisterVO;
 import com.express.user.service.UserService;
@@ -8,6 +10,8 @@ import com.express.utils.ResponseResult;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -26,21 +30,21 @@ public class UserController {
 
     @PostMapping("/register")
     @ApiOperation(value = "注册")
-    public ResponseResult register(@RequestBody
+    public ResponseResult<UserDTO> register(@RequestBody
                                        UserRegisterVO registerVO){
-        return ResponseResult.okResult(userService.register(registerVO));
+        return userService.register(registerVO);
     }
 
     @PostMapping("/login")
     @ApiOperation(value = "登录")
-    public ResponseResult login(@RequestBody
+    public ResponseResult<UserDTO> login(@RequestBody
                                     UserLoginVo userLoginVo) {
-        return ResponseResult.okResult(userService.login(userLoginVo));
+        return userService.login(userLoginVo);
     }
 
     @GetMapping("/userinfo")
     @ApiOperation(value = "管理员获取用户信息")
-    public ResponseResult userInfo(Integer pageNum, Integer pageSize){
-        return ResponseResult.okResult(userService.listAllUser(pageNum, pageSize));
+    public ResponseResult<IPage<UserDTO>> userInfo(Integer pageNum, Integer pageSize){
+        return userService.listAllUser(pageNum, pageSize);
     }
 }

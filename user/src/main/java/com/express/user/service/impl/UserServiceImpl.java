@@ -2,7 +2,6 @@ package com.express.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.express.enums.ResultCode;
 import com.express.exceptions.exception.UserException;
 import com.express.user.entity.User;
@@ -18,13 +17,10 @@ import com.express.utils.SecuritySHA1Utils;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static com.express.utils.RegExpressionCheck.checkPas;
 
@@ -41,7 +37,7 @@ import static com.express.utils.RegExpressionCheck.checkPas;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     @Override
-    public ResponseResult register(UserRegisterVO userRegisterVO){
+    public ResponseResult<UserDTO> register(UserRegisterVO userRegisterVO){
         if(userRegisterVO.getGender().length() > 1){
             throw new UserException(ResultCode.USER_ACCOUNT_ALREADY_EXIST);
         }
@@ -57,13 +53,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // extended in ServiceImpl<UserMapper, User>
         // includes baseMapper inside
         save(newUser);
-        newUser.setPassword("");
+        UserDTO userDTO = userEntityToOthers(UserDTO.class, newUser);
         return ResponseResult.okResult(newUser);
     }
 
     @SneakyThrows
     @Override
-    public ResponseResult login(UserLoginVo userLoginVo){
+    public ResponseResult<UserDTO> login(UserLoginVo userLoginVo){
         QueryWrapper<User> query = new QueryWrapper<>();
         query.eq("username", userLoginVo.getUsername())
                 .eq("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));
@@ -76,7 +72,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public ResponseResult listAllUser(Integer pageNum, Integer pageSize) {
+    public ResponseResult<IPage<UserDTO>> listAllUser(Integer pageNum, Integer pageSize) {
         IPage<User> iPage = PageUtils.getPage(pageNum, pageSize, User.class);
         page(iPage, new QueryWrapper<User>());
         PageUtils pageUtils = new PageUtils<>(iPage);

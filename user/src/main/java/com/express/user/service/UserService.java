@@ -1,8 +1,10 @@
 package com.express.user.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.express.enums.ResultCode;
 import com.express.user.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.express.user.pojo.DTO.UserDTO;
 import com.express.user.pojo.VO.UserLoginVo;
 import com.express.user.pojo.VO.UserRegisterVO;
 import com.express.utils.ResponseResult;
@@ -25,7 +27,7 @@ public interface UserService extends IService<User> {
      * @author zzy
      * @param userRegisterVO 用户登录的VO
      * @return 如果账号密码匹配 返回用户数据 */
-    ResponseResult register(UserRegisterVO userRegisterVO) ;
+    ResponseResult<UserDTO> register(UserRegisterVO userRegisterVO) ;
 
     /**
      * 用户登录
@@ -33,7 +35,7 @@ public interface UserService extends IService<User> {
      * @author zzy
      * @param userLoginVo 用户登录的VO
      * @return 如果账号密码匹配 返回用户数据 */
-    ResponseResult login(UserLoginVo userLoginVo);
+    ResponseResult<UserDTO> login(UserLoginVo userLoginVo);
 
     /**
      * 获取所有用户信息 （admin）
@@ -44,5 +46,5 @@ public interface UserService extends IService<User> {
      * @return 所有用户信息
      * @warning 未加上管理员权限
      * */
-    ResponseResult listAllUser(Integer pageNum, Integer pageSize);
+    ResponseResult<IPage<UserDTO>> listAllUser(Integer pageNum, Integer pageSize);
 }
