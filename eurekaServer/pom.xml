@@ -4,32 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.express</groupId>
-        <artifactId>ordersystem</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <artifactId>eurekaServer</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud.version>2021.0.1</spring-cloud.version>
     </properties>
 
     <dependencies>
-        <!--为服务注册中心引入 Eureka Server 的依赖-->
+        <!-- spring cloud eureka-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-        <!--devtools 和 lombok 均为开发辅助模块，根据需求适当选择-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
+        <!-- end-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -42,13 +37,10 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
-            <!--在主工程中使用 dependencyManagement 声明 Spring Cloud 的版本，
-            这样工程内的 Module 中引入 Spring Cloud 组件依赖时，就不必在声明组件的版本信息
-            保证 Spring Cloud 各个组件一致性-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR12</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

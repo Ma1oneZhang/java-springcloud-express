@@ -55,6 +55,7 @@
         <module>orders</module>
         <module>store</module>
         <module>menu</module>
+        <module>gateway</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
 

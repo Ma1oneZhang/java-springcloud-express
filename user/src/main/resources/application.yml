@@ -1,4 +1,9 @@
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: user-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: 'jdbc:mysql://localhost:3306/expresssystem?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8'
@@ -24,3 +29,10 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
 server:
   port: 19000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7010/eureka
+  instance:
+    prefer-ip-address: true  #显示访问路径的 ip 地址

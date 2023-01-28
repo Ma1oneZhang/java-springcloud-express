@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-01-15 02:20:46
  */
 @RestController
-@RequestMapping("/store/store")
+@RequestMapping("/store")
 public class StoreController {
     @Autowired
     private StoreService storeService  = new StoreServiceImpl() {

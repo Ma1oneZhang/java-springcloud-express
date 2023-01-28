@@ -22,7 +22,7 @@ import java.util.List;
  * @since 2023-01-15 02:04:52
  */
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 @Api(value="用户controller", tags={"用户操作接口"})
 public class UserController {
     @Autowired

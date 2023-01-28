@@ -17,33 +17,33 @@ import org.springframework.web.bind.annotation.*;
  * @since 2023-01-15 02:19:11
  */
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/order")
 public class OrdersController {
     // TODO
     @Autowired
     private OrdersService ordersService = new OrdersServiceImpl();
 
-    @PostMapping
+    @PostMapping("/create")
     @ApiOperation(value = "创建订单")
     ResponseResult createOrders(@RequestBody OrderVo orderVo){
         return ordersService.createOrders(orderVo);
     }
 
-    @GetMapping
+    @GetMapping("/querybyid")
     @ApiOperation(value = "查询订单")
     ResponseResult queryOrdersById(Integer id, Integer pageNum, Integer pageSize){
         // TODO: 鉴权的同时获取用户信息
         return ordersService.queryOrdersById(null, id, pageNum, pageSize);
     }
 
-    @GetMapping
+    @GetMapping("/querybyuser")
     @ApiOperation(value = "用户查询个人订单")
     ResponseResult queryOrdersByUserId(Integer pageNum, Integer pageSize){
         // TODO: 鉴权的同时获取用户信息
         return ordersService.queryOrdersByUserId(null, pageNum, pageSize);
     }
 
-    @GetMapping
+    @GetMapping("/querybystore")
     @ApiOperation(value = "商户查询商家订单情况")
     ResponseResult queryOrdersByStoreId(Integer pageNum, Integer pageSize){
         // TODO: 鉴权的同时获取用户信息

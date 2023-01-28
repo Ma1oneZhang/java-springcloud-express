@@ -17,22 +17,22 @@ import org.springframework.web.bind.annotation.*;
  * @since 2023-01-15 02:16:01
  */
 @RestController
-@RequestMapping("/menu/menu")
+@RequestMapping("/menu")
 public class MenuController {
     @Autowired
     private MenuService menuService  = new MenuServiceImpl();
 
-    @PostMapping
+    @PostMapping("/create")
     @ApiOperation(value = "创建菜品")
     ResponseResult creatMenus(@RequestBody MenuVo menuVo) {return menuService.creatMenus(menuVo);}
 
-    @GetMapping
+    @GetMapping("/querybyid")
     @ApiOperation(value = "通过id查询菜品")
     ResponseResult queryMenusById(Integer id, Integer pageNum, Integer pageSize){
         return menuService.queryMenusById(null, id, pageNum, pageSize);
     }
 
-    @GetMapping
+    @GetMapping("/querybystore")
     @ApiOperation(value = "通过商家id查询菜品")
     ResponseResult queryMenusByStoreId(Integer id, Integer pageNum, Integer pageSize){
         return menuService.queryMenusByStoreId(id, pageNum, pageSize);

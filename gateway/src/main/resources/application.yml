@@ -1,0 +1,57 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: gateway
+  main:
+    web-application-type: reactive
+    # lb means loadBalance, and we don't need it now just transfer http request
+    # later we use spring eureka to find service and auto loadBalance
+    # we just use user service to test if it works
+  cloud:
+    gateway:
+      routes:
+        - id: user_router
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: order_router
+          uri: lb://order-service
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: menu_router
+          uri: lb://menu-service
+          predicates:
+            - Path=/api/menu/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: store_router
+          uri: lb://store-service
+          predicates:
+            - Path=/api/store/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+server:
+  # as default
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7010/eureka
+  instance:
+    prefer-ip-address: true  #显示访问路径的 ip 地址
