@@ -7,7 +7,7 @@ import com.express.exceptions.exception.UserException;
 import com.express.user.entity.User;
 import com.express.user.mapper.UserMapper;
 import com.express.user.pojo.DTO.UserDTO;
-import com.express.user.pojo.VO.UserLoginVo;
+import com.express.user.pojo.VO.Auth.UserLoginVo;
 import com.express.user.pojo.VO.UserRegisterVO;
 import com.express.user.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -59,16 +59,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @SneakyThrows
     @Override
-    public ResponseResult<UserDTO> login(UserLoginVo userLoginVo){
+    public boolean login(UserLoginVo userLoginVo){
         QueryWrapper<User> query = new QueryWrapper<>();
         query.eq("username", userLoginVo.getUsername())
                 .eq("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));
         List<User> result = list(query);
-        if(result.size() == 0){
-            throw new UserException(ResultCode.USER_ACCOUNT_NOT_EXIST);
-        }else{
-            return ResponseResult.okResult(userEntityToOthers(UserDTO.class, result.get(0)));
-        }
+        return result.size() > 0;
     }
 
     @Override

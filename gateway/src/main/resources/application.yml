@@ -12,6 +12,27 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: login_router
+          uri: lb://user-service
+          predicates:
+            - Path=/login
+          filters:
+            - RewritePath=/(?<segment>/?.*),/$\{segment}
+
+        - id: refresh_login_router
+          uri: lb://user-service
+          predicates:
+            - Path=/refresh_login
+          filters:
+            - RewritePath=/(?<segment>/?.*),/$\{segment}
+
+        - id: login_out_router
+          uri: lb://user-service
+          predicates:
+            - Path=/logout
+          filters:
+            - RewritePath=/(?<segment>/?.*),/$\{segment}
+
         - id: user_router
           uri: lb://user-service
           predicates:

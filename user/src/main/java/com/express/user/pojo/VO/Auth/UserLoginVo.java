@@ -1,4 +1,4 @@
-package com.express.user.pojo.VO;
+package com.express.user.pojo.VO.Auth;
 
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
