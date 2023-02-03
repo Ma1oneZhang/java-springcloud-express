@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class StoreVo {
-    private String storeName;
+    private String storename;
     private String address;
     private String telephone;
     private String photo;

@@ -25,31 +25,37 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/store")
 public class StoreController {
     @Autowired
-    private StoreService storeService  = new StoreServiceImpl() {
-        @PostMapping
-        @ApiOperation(value = "创建商店")
-        public ResponseResult<StoreVo> createStores(StoreVo storeVo) {
-            return storeService.createStores(storeVo, null);
-        }
+    private StoreService storeService  = new StoreServiceImpl();
 
-        @GetMapping
-        @ApiOperation(value = "通过商店id查询商店")
-        public ResponseResult<StoreVo> queryStoresByStoreId(Integer storeId) {
-            return storeService.queryStoresByStoreId(storeId);
-        }
+    @PostMapping
+    @ApiOperation(value = "创建商店")
+    public ResponseResult<StoreVo> createStores(StoreVo storeVo, Integer userId) {
+        return storeService.createStores(storeVo, userId);
+    }
 
-        // TODO:
-        // using spring security to get user id
-        @GetMapping
-        @ApiOperation(value = "通过用户id查询商店")
-        public ResponseResult<IPage<StoreVo>> queryStoresByUserId(Integer pageNum, Integer pageSize) {
-            return storeService.queryStoresByUserId(null, pageNum, pageSize);
-        }
+    @GetMapping("/bystoreid")
+    @ApiOperation(value = "通过商店id查询商店")
+    public ResponseResult<StoreVo> queryStoresByStoreId(Integer storeId) {
+        return storeService.queryStoresByStoreId(storeId);
+    }
 
-        @GetMapping
-        @ApiOperation(value = "通过名字搜索商店")
-        public ResponseResult<IPage<StoreVo>> queryStoresByStoreName(String name, Integer pageNum, Integer pageSize){
-            return storeService.queryStoresByName(name, pageNum, pageSize);
-        }
-    };
+    // TODO:
+    // using spring security to get user id
+    @GetMapping("/byownerid")
+    @ApiOperation(value = "通过用户id查询商店")
+    public ResponseResult<IPage<StoreVo>> queryStoresByUserId(Integer userId,Integer pageNum, Integer pageSize) {
+        return storeService.queryStoresByUserId(userId, pageNum, pageSize);
+    }
+
+    @GetMapping("/byname")
+    @ApiOperation(value = "通过名字搜索商店")
+    public ResponseResult<IPage<StoreVo>> queryStoresByStoreName(String name, Integer pageNum, Integer pageSize){
+        return storeService.queryStoresByName(name, pageNum, pageSize);
+    }
+
+    @PostMapping("/delete")
+    @ApiOperation(value = "通过主键删除")
+    public ResponseResult DeleteStoreByID(Integer id){
+        return storeService.deleteStoreById(id);
+    }
 }

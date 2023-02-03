@@ -51,4 +51,12 @@ public interface StoreService extends IService<Store> {
      * @return 搜索得到的商店情况
      * */
     ResponseResult queryStoresByName(String name, Integer pageNum, Integer pageSize);
+
+    /**
+     * 通过主键删除
+     * @author zzy
+     * @param id 商店id
+     * @return 搜索得到的商店情况
+     * */
+    ResponseResult deleteStoreById(Integer id);
 }
