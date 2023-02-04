@@ -22,7 +22,7 @@ public interface OrdersService extends IService<Orders> {
      * @param orderVo orderVo
      * @return 返回订单详细信息
      * */
-    ResponseResult createOrders(OrderVo orderVo);
+    ResponseResult<OrderVo> createOrders(OrderVo orderVo);
 
     /**
      * 通过id查询订单
@@ -34,7 +34,7 @@ public interface OrdersService extends IService<Orders> {
      * @param pageNum pageNum
      * @return 返回订单详细信息
      * */
-    ResponseResult queryOrdersById(Integer userId,Integer orderId, Integer pageNum, Integer pageSize);
+    ResponseResult<OrderVo> queryOrdersById(Integer userId,Integer orderId, Integer pageNum, Integer pageSize);
 
     /**
      * 通过用户id查询订单
@@ -45,7 +45,7 @@ public interface OrdersService extends IService<Orders> {
      * @param pageNum pageNum
      * @return 返回订单详细信息
      * */
-    ResponseResult queryOrdersByUserId(Integer userId, Integer pageNum, Integer pageSize);
+    ResponseResult<OrderVo> queryOrdersByUserId(Integer userId, Integer pageNum, Integer pageSize);
 
 
     /**
@@ -57,5 +57,14 @@ public interface OrdersService extends IService<Orders> {
      * @param pageNum pageNum
      * @return 返回订单详细信息
      * */
-    ResponseResult queryOrdersByStoreId(Integer storeId, Integer pageNum, Integer pageSize);
+    ResponseResult<OrderVo> queryOrdersByStoreId(Integer storeId, Integer pageNum, Integer pageSize);
+
+    /**
+     * 取消订单
+     * @author gqc
+     * @param id order_id
+     * @return 是否取消成功
+     * */
+
+    ResponseResult<OrderVo> cancelOrder(Integer id);
 }

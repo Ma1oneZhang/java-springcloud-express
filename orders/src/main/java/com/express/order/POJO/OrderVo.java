@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class OrderVo {
     private String orderTime;
-    private int user_id;
-    private int store_id;
-    private int menu_id;
+    private int userId;
+    private int storeId;
+    private int menuId;
     private String state;
     private double cost;
 }

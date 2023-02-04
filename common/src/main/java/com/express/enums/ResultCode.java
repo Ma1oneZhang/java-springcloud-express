@@ -46,8 +46,8 @@ public enum ResultCode {
     SEND_MAIL_FAIL(5007, "验证码发送失败，请检查邮箱是否正确"),
     STORE_NOT_EXIST(4041, "商店不存在"),
 
-    /* 文章错误 */
-    Article_NOT_EXIST(6001, "文章不存在"), NULL_CONTENT(6002, "评论为空"), FILE_TYPE_ERROR(6003, "图片格式错误");
+    /* 订单错误 */
+    ORDER_NOT_EXIST(6001, "订单不存在");
 
 
 

@@ -1,6 +1,7 @@
 package com.express.order.controller;
 
 import com.express.order.POJO.OrderVo;
+import com.express.order.entity.Orders;
 import com.express.order.service.OrdersService;
 import com.express.order.service.impl.OrdersServiceImpl;
 import com.express.utils.ResponseResult;
@@ -25,28 +26,35 @@ public class OrdersController {
 
     @PostMapping("/create")
     @ApiOperation(value = "创建订单")
-    ResponseResult createOrders(@RequestBody OrderVo orderVo){
+    ResponseResult<OrderVo> createOrders(@RequestBody OrderVo orderVo){
         return ordersService.createOrders(orderVo);
     }
 
     @GetMapping("/querybyid")
     @ApiOperation(value = "查询订单")
-    ResponseResult queryOrdersById(Integer id, Integer pageNum, Integer pageSize){
+    ResponseResult<OrderVo> queryOrdersById(Integer id, Integer pageNum, Integer pageSize){
         // TODO: 鉴权的同时获取用户信息
         return ordersService.queryOrdersById(null, id, pageNum, pageSize);
     }
 
     @GetMapping("/querybyuser")
     @ApiOperation(value = "用户查询个人订单")
-    ResponseResult queryOrdersByUserId(Integer pageNum, Integer pageSize){
+    ResponseResult<OrderVo> queryOrdersByUserId(Integer userId, Integer pageNum, Integer pageSize){
         // TODO: 鉴权的同时获取用户信息
-        return ordersService.queryOrdersByUserId(null, pageNum, pageSize);
+        return ordersService.queryOrdersByUserId(userId, pageNum, pageSize);
     }
 
     @GetMapping("/querybystore")
     @ApiOperation(value = "商户查询商家订单情况")
-    ResponseResult queryOrdersByStoreId(Integer pageNum, Integer pageSize){
+    ResponseResult<OrderVo> queryOrdersByStoreId(Integer storeId, Integer pageNum, Integer pageSize){
         // TODO: 鉴权的同时获取用户信息
-        return ordersService.queryOrdersByStoreId(null , pageNum, pageSize);
+        return ordersService.queryOrdersByStoreId(storeId , pageNum, pageSize);
+    }
+
+    @GetMapping("/cancelorder")
+    @ApiOperation(value = "删除订单")
+    ResponseResult<OrderVo> cancelOrder(Integer id){
+        // TODO: 鉴权的同时获取用户信息
+        return ordersService.cancelOrder(id);
     }
 }
