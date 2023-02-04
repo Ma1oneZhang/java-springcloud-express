@@ -27,7 +27,7 @@ public class StoreController {
     @Autowired
     private StoreService storeService  = new StoreServiceImpl();
 
-    @PostMapping
+    @PostMapping("/createstore")
     @ApiOperation(value = "创建商店")
     public ResponseResult<StoreVo> createStores(StoreVo storeVo, Integer userId) {
         return storeService.createStores(storeVo, userId);
