@@ -22,7 +22,7 @@ public interface MenuService extends IService<Menu> {
      * @param menuVo menuVo
      * @return 返回菜品详细信息
      */
-    ResponseResult<Menu> creatMenus(MenuVo menuVo);
+    ResponseResult<MenuVo> creatMenus(MenuVo menuVo);
 
     /**
      * 通过id查询菜品
@@ -35,7 +35,7 @@ public interface MenuService extends IService<Menu> {
      *
      */
 
-    ResponseResult<Menu> queryMenusById(Integer userId, Integer menuId, Integer pageNum, Integer pageSize);
+    ResponseResult<MenuVo> queryMenusById(Integer userId, Integer menuId, Integer pageNum, Integer pageSize);
     /**
      * 通过商家id查询菜品
      * @author gqc
@@ -46,7 +46,7 @@ public interface MenuService extends IService<Menu> {
      *
      */
 
-    ResponseResult<Menu> queryMenusByStoreId(Integer storeId, Integer pageNum, Integer pageSize);
+    ResponseResult<MenuVo> queryMenusByStoreId(Integer storeId, Integer pageNum, Integer pageSize);
 
     /**
      * 通过菜品名称模糊搜索
@@ -57,7 +57,7 @@ public interface MenuService extends IService<Menu> {
      * @return 返回菜品详细信息
      *
      */
-    ResponseResult<Menu> queryMenuByName(String name, Integer pageNum, Integer pageSize);
+    ResponseResult<MenuVo> queryMenuByName(String name, Integer pageNum, Integer pageSize);
 
     /**
      * 删除菜品
@@ -66,5 +66,5 @@ public interface MenuService extends IService<Menu> {
      * @return 返回菜品详细信息
      *
      */
-    ResponseResult<Menu> deleteByMenuId(Integer id);
+    ResponseResult<MenuVo> deleteByMenuId(Integer id);
 }

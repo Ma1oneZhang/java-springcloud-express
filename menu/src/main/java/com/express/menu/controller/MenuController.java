@@ -25,28 +25,28 @@ public class MenuController {
 
     @PostMapping("/create")
     @ApiOperation(value = "创建菜品")
-    ResponseResult creatMenus(@RequestBody MenuVo menuVo) {return menuService.creatMenus(menuVo);}
+    ResponseResult<MenuVo> creatMenus(@RequestBody MenuVo menuVo) {return menuService.creatMenus(menuVo);}
 
     @GetMapping("/querybyid")
     @ApiOperation(value = "通过id查询菜品")
-    ResponseResult queryMenusById(Integer id, Integer pageNum, Integer pageSize){
+    ResponseResult<MenuVo> queryMenusById(Integer id, Integer pageNum, Integer pageSize){
         return menuService.queryMenusById(null, id, pageNum, pageSize);
     }
 
     @GetMapping("/querybystore")
     @ApiOperation(value = "通过商家id查询菜品")
-    ResponseResult queryMenusByStoreId(Integer id, Integer pageNum, Integer pageSize){
+    ResponseResult<MenuVo> queryMenusByStoreId(Integer id, Integer pageNum, Integer pageSize){
         return menuService.queryMenusByStoreId(id, pageNum, pageSize);
     }
     @GetMapping("/querybyname")
     @ApiOperation(value = "通过菜品名称模糊搜索")
-    ResponseResult queryMenuByName(String name, Integer pageNum, Integer pageSize){
+    ResponseResult<MenuVo> queryMenuByName(String name, Integer pageNum, Integer pageSize){
         return menuService.queryMenuByName(name, pageNum, pageSize);
     }
 
     @GetMapping("/deletebyid")
     @ApiOperation(value = "通过主键删除菜品")
-    ResponseResult deleteByMenuId(Integer id){
+    ResponseResult<MenuVo> deleteByMenuId(Integer id){
         return menuService.deleteByMenuId(id);
     }
 }
