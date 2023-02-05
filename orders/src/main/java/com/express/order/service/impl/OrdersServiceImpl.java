@@ -73,6 +73,7 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Orders> impleme
         return ResponseResult.errorResult(ResultCode.ORDER_NOT_EXIST);
     }
 
+    //TODO:增加订单状态改变接口
     private Orders toOrderEntity(Object object){
         Orders orders = new Orders();
         BeanUtils.copyProperties(object, orders);

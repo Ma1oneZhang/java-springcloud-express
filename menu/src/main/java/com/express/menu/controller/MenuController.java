@@ -1,5 +1,6 @@
 package com.express.menu.controller;
 
+import com.express.menu.entity.Menu;
 import com.express.menu.pojo.MenuVo;
 import com.express.menu.service.MenuService;
 import com.express.menu.service.impl.MenuServiceImpl;
@@ -37,5 +38,15 @@ public class MenuController {
     ResponseResult queryMenusByStoreId(Integer id, Integer pageNum, Integer pageSize){
         return menuService.queryMenusByStoreId(id, pageNum, pageSize);
     }
+    @GetMapping("/querybyname")
+    @ApiOperation(value = "通过菜品名称模糊搜索")
+    ResponseResult queryMenuByName(String name, Integer pageNum, Integer pageSize){
+        return menuService.queryMenuByName(name, pageNum, pageSize);
+    }
 
+    @GetMapping("/deletebyid")
+    @ApiOperation(value = "通过主键删除菜品")
+    ResponseResult deleteByMenuId(Integer id){
+        return menuService.deleteByMenuId(id);
+    }
 }

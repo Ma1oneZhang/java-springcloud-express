@@ -47,9 +47,10 @@ public enum ResultCode {
     STORE_NOT_EXIST(4041, "商店不存在"),
 
     /* 订单错误 */
-    ORDER_NOT_EXIST(6001, "订单不存在");
+    ORDER_NOT_EXIST(6001, "订单不存在"),
 
-
+    /* 菜品错误 */
+    MENU_NOT_EXIST(6002, "菜品不存在");
 
 
 

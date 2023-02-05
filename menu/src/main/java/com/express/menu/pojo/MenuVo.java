@@ -18,5 +18,6 @@ public class MenuVo {
     private String flavor;
     private String type;
     private String photo;
+    private Integer storeId;
 
 }
