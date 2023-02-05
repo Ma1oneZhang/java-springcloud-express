@@ -67,7 +67,6 @@ public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements
 
     @Override
     public ResponseResult deleteStoreById(Integer id) {
-        Store store = getById(id);
         if(removeById(id)){
             return ResponseResult.okResult();
         }
