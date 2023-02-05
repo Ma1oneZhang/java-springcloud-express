@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @author zzy
  * @since 2023-01-15 02:04:52
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(value = "User注册对象", description = "---")
-public class UserRegisterVO {
+public class UserRegisterVO implements Serializable {
     private String username;
     private String password;
     private String nickname;

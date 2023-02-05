@@ -52,4 +52,10 @@ public class UserController {
         // 权限验证
         return userService.listAllUser(pageNum, pageSize);
     }
+
+    @GetMapping("/myinfo")
+    @ApiOperation(value = "用户获取自身信息")
+    public ResponseResult<UserDTO> myInfo(Integer id){
+        return userService.queryByUserId(id);
+    }
 }

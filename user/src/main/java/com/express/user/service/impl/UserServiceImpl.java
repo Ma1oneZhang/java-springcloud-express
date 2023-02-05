@@ -38,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public ResponseResult<UserDTO> register(UserRegisterVO userRegisterVO){
-        if(userRegisterVO.getGender().length() > 1){
+        if(userRegisterVO.getGender() == null || userRegisterVO.getGender().length() > 1){
             throw new UserException(ResultCode.USER_ACCOUNT_ALREADY_EXIST);
         }
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -75,6 +75,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         List<User> result =  pageUtils.getList();
         pageUtils.setList(listUserEntityToOthers(UserDTO.class, result));
         return ResponseResult.okResult(pageUtils);
+    }
+
+    @Override
+    public ResponseResult<UserDTO> queryByUserId(Integer id) {
+        User user = getById(id);
+        if(user == null){
+            throw new UserException(ResultCode.USER_ACCOUNT_NOT_EXIST);
+        }
+        return ResponseResult.okResult(userEntityToOthers(UserDTO.class, user));
     }
 
     /**

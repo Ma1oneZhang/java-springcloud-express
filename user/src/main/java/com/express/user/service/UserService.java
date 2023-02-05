@@ -43,4 +43,15 @@ public interface UserService extends IService<User> {
      * @warning 未加上管理员权限
      * */
     ResponseResult<IPage<UserDTO>> listAllUser(Integer pageNum, Integer pageSize);
+
+
+    /**
+     * 获取所有用户信息 （admin）
+     *
+     * @author zzy
+     * @param id
+     * @return 对应用户信息
+     * @warning 未加上管理员权限
+     * */
+    ResponseResult<UserDTO> queryByUserId(Integer id);
 }

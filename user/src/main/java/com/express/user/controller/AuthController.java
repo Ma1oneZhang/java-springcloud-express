@@ -36,6 +36,7 @@ public class AuthController {
     }
 
     @PostMapping
+    @GetMapping
     public ResponseResult logout(){
         return ResponseResult.okResult();
     }
