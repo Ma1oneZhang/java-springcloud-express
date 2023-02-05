@@ -2,7 +2,7 @@ package com.express.store.service;
 
 import com.express.store.entity.Store;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.express.store.pojo.StoreVo;
+import com.express.store.pojo.StoreCreateVo;
 import com.express.utils.ResponseResult;
 
 /**
@@ -17,11 +17,10 @@ public interface StoreService extends IService<Store> {
     /**
      * 创建商家
      * @author gqc
-     * @param storeVo storeVo
-     * @param ownerId ownerId
+     * @param vo StoreCreateVo
      * @return 返回商店详细信息
      */
-    ResponseResult createStores(StoreVo storeVo, Integer ownerId);
+    ResponseResult createStores(StoreCreateVo vo);
 
     /**
      * 通过id查询商家

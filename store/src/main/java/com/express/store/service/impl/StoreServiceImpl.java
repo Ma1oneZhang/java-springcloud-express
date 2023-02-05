@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.express.enums.ResultCode;
 import com.express.store.entity.Store;
 import com.express.store.mapper.StoreMapper;
+import com.express.store.pojo.StoreCreateVo;
 import com.express.store.pojo.StoreVo;
 import com.express.store.service.StoreService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -28,12 +29,13 @@ import java.util.List;
 public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements StoreService {
 
     @Override
-    public ResponseResult createStores(StoreVo storeVo, Integer ownerId) {
+    public ResponseResult createStores(StoreCreateVo storeVo) {
         Store store = new Store();
-        store.setUserId(ownerId);
         BeanUtils.copyProperties(storeVo, store);
         save(store);
-        return ResponseResult.okResult(storeVo);
+        StoreVo vo = new StoreVo();
+        BeanUtils.copyProperties(store, vo);
+        return ResponseResult.okResult(vo);
     }
 
     @Override

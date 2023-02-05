@@ -38,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public ResponseResult<UserDTO> register(UserRegisterVO userRegisterVO){
-        if(userRegisterVO.getGender() == null || userRegisterVO.getGender().length() > 1){
+        if(userRegisterVO.getGender() == null || userRegisterVO.getGender().length() > 1) {
             throw new UserException(ResultCode.USER_ACCOUNT_ALREADY_EXIST);
         }
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -49,6 +49,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if(!checkPas(userRegisterVO.getPassword())){
             throw new UserException(ResultCode.PASSWORD_TOO_WEAK);
         }
+        userRegisterVO.setPassword(SecuritySHA1Utils.shaEncode(userRegisterVO.getPassword()));
         User newUser = toUserEntity(userRegisterVO);
         // extended in ServiceImpl<UserMapper, User>
         // includes baseMapper inside
@@ -59,12 +60,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @SneakyThrows
     @Override
-    public boolean login(UserLoginVo userLoginVo){
+    public ResponseResult<UserDTO> login(UserLoginVo userLoginVo){
         QueryWrapper<User> query = new QueryWrapper<>();
         query.eq("username", userLoginVo.getUsername())
                 .eq("password", SecuritySHA1Utils.shaEncode(userLoginVo.getPassword()));
-        List<User> result = list(query);
-        return result.size() > 0;
+        User user = getOne(query);
+        if(user == null){
+            throw new UserException(ResultCode.USER_CREDENTIALS_ERROR);
+        }
+        return ResponseResult.okResult(userEntityToOthers(UserDTO.class, user));
     }
 
     @Override

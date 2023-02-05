@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class MenuVo {
+    private Integer id;
     private String name;
     private double price;
     private String flavor;

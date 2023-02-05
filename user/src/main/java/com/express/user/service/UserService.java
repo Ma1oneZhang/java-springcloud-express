@@ -31,7 +31,7 @@ public interface UserService extends IService<User> {
      * @author zzy
      * @param userLoginVo 用户登录的VO
      * @return 如果账号密码匹配 返回用户数据 */
-    boolean login(UserLoginVo userLoginVo);
+    ResponseResult<UserDTO> login(UserLoginVo userLoginVo);
 
     /**
      * 获取所有用户信息 （admin）

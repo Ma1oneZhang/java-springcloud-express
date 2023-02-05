@@ -13,6 +13,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserLoginResultVo {
     String token;
-
     UserDTO userDetail;
 }

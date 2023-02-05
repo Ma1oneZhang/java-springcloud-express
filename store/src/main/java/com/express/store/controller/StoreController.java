@@ -1,17 +1,14 @@
 package com.express.store.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.express.store.pojo.StoreCreateVo;
 import com.express.store.pojo.StoreVo;
 import com.express.store.service.StoreService;
 import com.express.store.service.impl.StoreServiceImpl;
 import com.express.utils.ResponseResult;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -29,9 +26,16 @@ public class StoreController {
 
     @PostMapping("/createstore")
     @ApiOperation(value = "创建商店")
-    public ResponseResult<StoreVo> createStores(StoreVo storeVo, Integer userId) {
-        return storeService.createStores(storeVo, userId);
+    public ResponseResult<StoreVo> createStores(@RequestBody StoreCreateVo vo) {
+        return storeService.createStores(vo);
     }
+
+    @GetMapping("/delete")
+    @ApiOperation(value = "通过主键删除")
+    public ResponseResult DeleteStoreByID(Integer id){
+        return storeService.deleteStoreById(id);
+    }
+
 
     @GetMapping("/bystoreid")
     @ApiOperation(value = "通过商店id查询商店")
@@ -53,9 +57,5 @@ public class StoreController {
         return storeService.queryStoresByName(name, pageNum, pageSize);
     }
 
-    @PostMapping("/delete")
-    @ApiOperation(value = "通过主键删除")
-    public ResponseResult DeleteStoreByID(Integer id){
-        return storeService.deleteStoreById(id);
-    }
+
 }
