@@ -1,6 +1,5 @@
 package com.express.user.pojo.VO;
 
-import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,21 +16,16 @@ import java.io.Serializable;
 @NoArgsConstructor
 @ApiModel(value = "User注册对象", description = "---")
 public class UserRegisterVO implements Serializable {
-    @NotNull
+
     private String username;
 
-    @NotNull
+
     private String password;
 
-    @NotNull
     private String nickname;
-    @NotNull
     private String gender;
     private String telephone;
-    @NotNull
     private String userPhotoUrl;
-    @NotNull
     private String address;
-    @NotNull
     private Integer userType;
 }

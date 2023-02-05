@@ -25,7 +25,7 @@ public class MenuController {
 
     @PostMapping("/create")
     @ApiOperation(value = "创建菜品")
-    ResponseResult<MenuVo> creatMenus(@RequestBody MenuVo menuVo) {return menuService.creatMenus(menuVo);}
+        ResponseResult<MenuVo> creatMenus(@RequestBody MenuVo menuVo) {return menuService.creatMenus(menuVo);}
 
     @GetMapping("/querybyid")
     @ApiOperation(value = "通过id查询菜品")

@@ -49,7 +49,7 @@
     </parent>
 
     <modules>
-        <module>eurekaServer</module>
+        <module>eurekaserver</module>
         <module>common</module>
         <module>user</module>
         <module>orders</module>
@@ -58,5 +58,13 @@
         <module>gateway</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
+

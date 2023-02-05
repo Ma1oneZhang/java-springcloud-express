@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>eurekaServer</artifactId>
+    <artifactId>eurekaserver</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
